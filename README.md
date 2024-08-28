@@ -1,2 +1,2 @@
-# Sistema-AvaliaF-cil
-AvaliaFácil é um sistema de avaliação focado em experiências gastronômicas e de entretenimento. Permite que usuários avaliem estabelecimentos de forma simples, atribuindo notas e comentando sobre diversos aspectos. Estabelecimentos podem visualizar feedbacks e relatórios para melhorar seus serviços.
+# Sistema AvaliaFácil
+AvaliaFácil é um sistema de avaliação orientado a experiências gastronômicas e de entretenimento. O objetivo do projeto é proporcionar uma ferramenta intuitiva e acessível para que usuários possam compartilhar suas opiniões sobre estabelecimentos, atribuindo notas e descrevendo suas experiências. O sistema oferece uma interface amigável, permitindo avaliações detalhadas que incluem aspectos como qualidade do atendimento, ambiente, cardápio, entre outros. Além disso, os estabelecimentos podem visualizar relatórios e feedbacks, ajudando na melhoria contínua dos seus serviços.
