@@ -1,16 +1,15 @@
 import datetime
 
 class Usuario:
-    # alterar os atributos e métodos de todas as classes
     
-'''    def __init__(self, id, nome, email, fone):
+    def __init__(self, id, nome, senha, admin):
         if not isinstance(id, int) or id <= 0:
             raise ValueError("\nID inválido, informe outro número.")
         if not nome:
             raise ValueError("\nO campo nome precisa ser preenchido")
-        if not email:
+        if not senha:
             raise ValueError("\nO campo e-mail precisa ser preenchido")
-        if not fone:
+        if not admin:
             raise ValueError("\nO campo Telefone precisa ser preenchido")
 
         self.__id = id
