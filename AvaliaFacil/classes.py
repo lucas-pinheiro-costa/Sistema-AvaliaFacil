@@ -81,9 +81,9 @@ class Estabelecimento:
             self.__tipo = value
         else: raise ValueError("O tipo deve ser uma string.\n") 
     
-    def set_usuario(self, usuario):
-        if isinstance(usuario, Usuario):
-            self.__usuario = usuario 
+    def set_usuario(self, value):
+        if isinstance(value, Usuario):
+            self.__usuario = value  
         else: raise ValueError("O usuário deve ser uma instância da classe Usuario.")
 
 class Cliente:
@@ -105,5 +105,60 @@ class Cliente:
         if isinstance(value, str):
             self.__email = value
         else: raise ValueError("O email precisa ser uma string.")
+
+class Avaliacao:
+    def __init__(self, id, data, qualidadedoproduto, tempoespera, limpeza, atendimento, buffet, cardapio, ambiente, preco, nota, comentario, anonimo):
+        self.__id = id
+        self.__data = data
+        self.__qualidadedoproduto = qualidadedoproduto
+        self.__tempoespera = tempoespera
+        self.__limpeza = limpeza
+        self.__atendimento = atendimento
+        self.__buffet = buffet
+        self.__cardapio = cardapio 
+        self.__ambiente = ambiente 
+        self.__preco = preco
+        self.__nota = nota 
+        self.__comentario = comentario
+        self.__anonimo = anonimo 
+
+    def get_id(self):
+        return self.__id 
+    def set_id(self, value): 
         
+
+
+
+
+
+
+
+
+
+
+class Feedback: 
+    def __init__(self, id, comentario):
+        self.__id = id
+        self.__comentario = comentario 
     
+    def get_id(self):
+        return self.__id
+    def set_id(self, value):
+        if value >= 0: 
+            self.__id = value 
+        else: raise ValueError("Digite um ID válido.")
+    
+    def get_comentario(self):
+        return self.__comentario 
+    def set_comentario(self, value):
+        if isinstance(value, str):
+            self.__comentario = value 
+        else: raise ValueError("O comentário precisa ser uma string.")
+
+    def set_IdEstabelecimento(self, value):
+        if isinstance(value, Estabelecimento):
+               self.__value = value
+
+    def set_IdAvaliacao(self, value):
+        if isinstance(value, Avaliacao):
+               self.__value = value
