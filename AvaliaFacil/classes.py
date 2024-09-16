@@ -3,6 +3,7 @@
 
 import pandas as pd
 import streamlit as st
+import datetime as dt
 
 class Usuario:
     def __init__(self, id, nome, senha, admin):
@@ -124,17 +125,91 @@ class Avaliacao:
 
     def get_id(self):
         return self.__id 
-    def set_id(self, value): 
-        
+    def set_id(self, value):
+            if value >= 0: 
+                self.__id = value
+            else: raise ValueError("Digite um ID válido.\n")
+    
+    def get_data(self):
+        return self.__data 
+    def set_data(self, value):
+        if isinstance(value, dt):
+            self.__data = value 
+        else: raise ValueError("Insira uma data válida!")
 
+    def get_qualidadedoproduto(self):
+        return self.__qualidadedoproduto
+    def set_qualidadedoproduto(self, value):
+        if value <= 5:
+            self.__qualidadedoproduto = value
+    
+    def get_tempoespera(self):
+        return self.__tempoespera
+    def set_(self, value):
+        if value <= 5:
+            self.__tempoespera= value
+    
+    def get_limpeza(self):
+        return self.__limpeza
+    def set_limpeza(self, value):
+        if value <= 5:
+            self.__limpeza = value
+   
+    def get_atendimento(self):
+        return self.__atendimento
+    def set_(self, value):
+        if value <= 5:
+            self.__atendimento = value
+    
+    def get_buffet(self):
+        return self.__buffet
+    def set_(self, value):
+        if value <= 5:
+            self.__buffet = value
+    
+    def get_cardapio(self):
+        return self.__cardapio
+    def set_(self, value):
+        if value <= 5:
+            self.__cardapio = value
+    
+    def get_ambiente(self):
+        return self.__ambiente
+    def set_ambiente(self, value):
+        if value <= 5:
+            self.__ambiente = value
+   
+    def get_preco(self):
+        return self.__preco
+    def set_(self, value):
+        if value <= 5:
+            self.__preco = value
+  
+    def get_nota(self):
+        return self.__nota
+    def set_(self, value):
+        if isinstance(value, float):
+            self.__nota = value
+    
+    def get_comentario(self):
+        return self.__comentario
+    def set_(self, value):
+        if isinstance(value, str):
+            self.__comentario = value
+    
+    def get_anonimo(self):
+        return self.__anonimo
+    def set_(self, value):
+        if isinstance(value, bool):
+            self.__anonimo = value
 
+    def set_IdCliente(self, value):
+        if isinstance(value, Cliente):
+            self.__value, value
 
-
-
-
-
-
-
+    def set_IdEstabelecimento(self, value):
+        if isinstance(value, Estabelecimento):
+               self.__value = value   
 
 class Feedback: 
     def __init__(self, id, comentario):
