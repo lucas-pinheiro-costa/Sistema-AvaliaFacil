@@ -1,6 +1,3 @@
-#acrescentar classes e utilizar conceito de herança
-#iniciar front no streamlit 
-
 import pandas as pd
 import streamlit as st
 import datetime as dt
@@ -140,6 +137,8 @@ class Avaliacao:
             raise ValueError("\nO campo data precisa ser preenchido.")
         if not qualidadedoproduto:
             raise ValueError("\nO campo endereço precisa ser preenchido.")
+        if not tempoespera:
+            raise ValueError("\nO campo endereço precisa ser preenchido.")
         
         self.__id = id
         self.__data = data
@@ -161,9 +160,10 @@ class Avaliacao:
     def get_data(self):
         return self.__data 
     def set_data(self, value):
-        if isinstance(value, dt):
-            self.__data = value 
-        else: raise ValueError("Insira uma data válida!")
+        if isinstance(value, dt.date):
+            self.__data = value
+        else:
+            raise ValueError("Insira uma data válida.")
 
     def get_qualidadedoproduto(self):
         return self.__qualidadedoproduto
@@ -173,9 +173,11 @@ class Avaliacao:
     
     def get_tempoespera(self):
         return self.__tempoespera
-    def set_(self, value):
-        if value <= 5:
-            self.__tempoespera= value
+    def set_tempoespera(self, value):
+        if 0 <= value <= 5:
+            self.__tempoespera = value
+        else:
+            raise ValueError("A avaliação do tempo de espera deve estar entre 0 e 5.")
     
     def get_limpeza(self):
         return self.__limpeza
@@ -227,17 +229,9 @@ class Avaliacao:
     
     def get_anonimo(self):
         return self.__anonimo
-    def set_(self, value):
+    def set_anonimo(self, value):
         if isinstance(value, bool):
             self.__anonimo = value
-
-    def set_IdCliente(self, value):
-        if isinstance(value, Cliente):
-            self.__value, value
-
-    def set_IdEstabelecimento(self, value):
-        if isinstance(value, Estabelecimento):
-               self.__value = value   
 
 class Feedback: 
     def __init__(self, id, comentario):
@@ -246,10 +240,6 @@ class Feedback:
     
     def get_id(self):
         return self.__id
-    def set_id(self, value):
-        if value >= 0: 
-            self.__id = value 
-        else: raise ValueError("Digite um ID válido.")
     
     def get_comentario(self):
         return self.__comentario 
@@ -257,11 +247,3 @@ class Feedback:
         if isinstance(value, str):
             self.__comentario = value 
         else: raise ValueError("O comentário precisa ser uma string.")
-
-    def set_IdEstabelecimento(self, value):
-        if isinstance(value, Estabelecimento):
-               self.__value = value
-
-    def set_IdAvaliacao(self, value):
-        if isinstance(value, Avaliacao):
-               self.__value = value
